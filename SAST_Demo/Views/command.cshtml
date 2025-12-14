@@ -1,0 +1,17 @@
+﻿@{
+    ViewData["Title"] = "Vulnerable Command Execution";
+}
+
+<h2>Vulnerable Command Execution (CWE-78)</h2>
+
+<form method="post">
+    <label>Enter parameter for "ls" command:</label><br />
+    <input type="text" name="userInput" style="width:300px;" />
+    <button type="submit">Run</button>
+</form>
+
+@if (ViewBag.Output != null)
+{
+    <h3>Output:</h3>
+    <pre>@ViewBag.Output</pre>
+}

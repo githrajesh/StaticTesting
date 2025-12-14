@@ -1,0 +1,20 @@
+﻿@{
+    ViewData["Title"] = "Directory Traversal Demo (CWE-22)";
+}
+
+<h2>Directory Traversal Vulnerability</h2>
+
+<form method="post">
+    <label>Enter file name to read:</label><br />
+    <input type="text" name="fileName" style="width:300px;" />
+    <button type="submit">Read File</button>
+</form>
+
+@if (ViewBag.FileContents != null)
+{
+    <h3>Attempted Path:</h3>
+    <pre>@ViewBag.RequestedPath</pre>
+
+    <h3>File Contents:</h3>
+    <pre>@ViewBag.FileContents</pre>
+}
